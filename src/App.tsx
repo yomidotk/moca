@@ -57,7 +57,7 @@ function clampZoom(z: number) {
 
 export default function App() {
   const [state, setState] = useState<AppState>(DEFAULT_STATE);
-  const [workspaceZoom, setWorkspaceZoom] = useState(1.0);
+  const [workspaceZoom, setWorkspaceZoom] = useState(0.6);
   const canvasRef = useRef<HTMLDivElement>(null);
   const workspaceRef = useRef<HTMLDivElement>(null);
 
