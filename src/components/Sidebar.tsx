@@ -125,7 +125,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ state, onChange, onScreenshotC
       <div className="px-5 pt-6 pb-4" style={{ borderBottom: '1px solid var(--color-border)' }}>
         <div className="flex items-center gap-2.5">
           <img
-            src="/logo.png"
+            src={`${import.meta.env.BASE_URL}logo.png`}
             alt="Moca"
             className="w-9 h-9 rounded-xl flex-shrink-0"
             style={{ objectFit: 'cover' }}
