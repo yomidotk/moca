@@ -32,7 +32,8 @@ export const MockupCanvas: React.FC<MockupCanvasProps> = ({ state, canvasRef }) 
   const scale = state.deviceScale;
   const boxShadow = getShadowBoxShadow(state.shadowType, scale);
   const hasText = !!(state.text.title || state.text.subtitle);
-  const hPad = Math.max(12, Math.round(state.padding * 0.5));
+  const sidePad = Math.round(state.padding * 1.5);
+  const topPad = Math.max(16, Math.round(state.padding * 0.45));
 
   const frameProps = {
     screenshot: state.screenshot,
@@ -67,15 +68,15 @@ export const MockupCanvas: React.FC<MockupCanvasProps> = ({ state, canvasRef }) 
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: hasText ? 'flex-start' : 'center',
         overflow: 'hidden',
-        paddingTop: state.padding,
-        paddingBottom: state.padding,
-        paddingLeft: hPad,
-        paddingRight: hPad,
+        paddingTop: hasText ? topPad : sidePad,
+        paddingBottom: sidePad,
+        paddingLeft: sidePad,
+        paddingRight: sidePad,
         width: 'fit-content',
         borderRadius: 16,
-        gap: hasText ? 12 : 0,
+        gap: hasText ? 28 : 0,
       }}
     >
       {hasText && (

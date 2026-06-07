@@ -27,12 +27,6 @@ const DownloadIcon = () => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
   </svg>
 );
-const SparkleIcon = () => (
-  <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 2l2.4 7.6H22l-6.4 4.7 2.4 7.7L12 17.3l-6 4.7 2.4-7.7L2 9.6h7.6z" />
-  </svg>
-);
-
 /* ─── Small reusable pieces ─────────────────────────────────── */
 const SectionLabel: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <div className="flex items-center gap-2 pb-1" style={{ borderBottom: '1px solid var(--color-border)' }}>
@@ -130,15 +124,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ state, onChange, onScreenshotC
       {/* Logo */}
       <div className="px-5 pt-6 pb-4" style={{ borderBottom: '1px solid var(--color-border)' }}>
         <div className="flex items-center gap-2.5">
-          <div
-            className="w-8 h-8 rounded-xl flex items-center justify-center"
-            style={{ background: 'linear-gradient(135deg, #6366f1, #a78bfa)' }}
-          >
-            <SparkleIcon />
-          </div>
+          <img
+            src="/logo.png"
+            alt="Moca"
+            className="w-9 h-9 rounded-xl flex-shrink-0"
+            style={{ objectFit: 'cover' }}
+          />
           <div>
             <h1 className="text-base font-bold tracking-tight" style={{ color: 'var(--color-text)' }}>
-              MockupMagic
+              Moca
             </h1>
             <p className="text-[11px]" style={{ color: 'var(--color-text-muted)' }}>
               Beautiful device mockups

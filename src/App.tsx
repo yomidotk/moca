@@ -34,7 +34,7 @@ const DEFAULT_STATE: AppState = {
   bgCustomImage: null,
   deviceScale: 1.0,
   deviceTilt: 0,
-  padding: 24,
+  padding: 40,
   shadowType: 'soft',
   text: {
     title: '',
@@ -102,7 +102,7 @@ export default function App() {
         backgroundColor: isTransparent ? 'rgba(0,0,0,0)' : undefined,
       });
       const link = document.createElement('a');
-      link.download = `mockup-magic-${Date.now()}.png`;
+      link.download = `moca-${Date.now()}.png`;
       link.href = dataUrl;
       document.body.appendChild(link);
       link.click();
