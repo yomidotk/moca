@@ -28,14 +28,9 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - name: Nest dist inside moca/ folder for correct base path
-        run: |
-          mkdir -p deploy/moca
-          cp -r dist/. deploy/moca/
-
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: deploy
+          path: dist
 
   deploy:
     needs: build
